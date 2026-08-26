@@ -21,18 +21,16 @@ jobs:
           python-version: '3.10'
 
       - name: Configurar Java JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Instalar Flutter
+      - name: Instalar Flutter compatible
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.24.x'
           channel: 'stable'
-
-      - name: Diagnostico de Flutter
-        run: flutter doctor -v
 
       - name: Instalar dependencias de Python
         run: |
@@ -41,7 +39,7 @@ jobs:
 
       - name: Compilar APK
         run: |
-          flet build apk -v
+          flet build apk --yes --no-interactive
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
