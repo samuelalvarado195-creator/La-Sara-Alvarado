@@ -39,5 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DondeLaSarita_APK
-          path: build/apk/*.apkSarita_APK
           path: build/apk/*.apk
