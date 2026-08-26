@@ -39,7 +39,7 @@ jobs:
 
       - name: Compilar APK
         run: |
-          flet build apk --yes --no-interactive
+          flet build apk -y --flutter-sdk-path $FLUTTER_ROOT
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
