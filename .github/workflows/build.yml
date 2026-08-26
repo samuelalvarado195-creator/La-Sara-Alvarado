@@ -38,8 +38,11 @@ jobs:
           pip install flet openpyxl opencv-python-headless pyzbar
 
       - name: Compilar APK
+        env:
+          CI: 'true'
+          FLET_NON_INTERACTIVE: 'true'
         run: |
-          flet build apk -y --flutter-sdk-path $FLUTTER_ROOT
+          flet build apk
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
