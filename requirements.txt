@@ -1,0 +1,4 @@
+flet
+openpyxl
+opencv-python-headless
+pyzbar
