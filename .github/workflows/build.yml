@@ -31,6 +31,9 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Diagnostico de Flutter
+        run: flutter doctor -v
+
       - name: Instalar dependencias de Python
         run: |
           python -m pip install --upgrade pip
@@ -38,7 +41,7 @@ jobs:
 
       - name: Compilar APK
         run: |
-          flet build apk
+          flet build apk -v
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
